@@ -8,7 +8,7 @@
                 <h2 class="fw-bold text-center mb-4">
                     Connectez-vous à votre compte
                 </h2>
-                <form>
+                <form id="connectionForm">
                     <div class="mb-3">
                         <label class="form-label fw-semibold small text-secondary">Nom d'utilisateur ou e-mail</label>
                         <div class="d-flex">
@@ -21,10 +21,10 @@
                     <div class="mb-2">
                         <label class="form-label fw-semibold small text-secondary">Mot de passe</label>
                         <div class="d-flex">
-                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border">
+                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border" id="password">
                                 <i class="bi bi-lock-fill"></i>
                             </div>
-                            <input type="password" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
+                            <input type="password" name="password" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
                         </div>
                     </div>
                     <div class="text-end mb-3">

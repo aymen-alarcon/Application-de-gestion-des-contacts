@@ -38,11 +38,14 @@
                     </div>
                     <div class="mb-2">
                         <label class="form-label fw-semibold small text-secondary">Confirmer Mot de passe</label>
-                        <div class="d-flex">
-                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border confirm-password">
-                                <i class="bi bi-lock-fill"></i>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex">
+                                <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border confirm-password">
+                                    <i class="bi bi-lock-fill"></i>
+                                </div>
+                                <input type="password" name="confirmPassword" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
                             </div>
-                            <input type="password" name="confirmPassword" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
+                            <div class="password-check-container"></div>
                         </div>
                     </div>
                     <button class="btn btn-primary text-white fw-bold w-100 py-3">Créer un compte</button>

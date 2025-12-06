@@ -19,18 +19,16 @@
                     <img src="../assets/img/logo.png" alt="ConnectSys Logo" height="36" class="me-2">
                     <span class="fw-bold text-dark">ConnectSys</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold <?php echo ($title == 'Page de profile') ? 'active' : ''; ?>" 
-                            href="profile.php">Profile</a>
+                            <a class="nav-link fw-semibold <?php echo ($title == 'Page de profile') ? 'active' : ''; ?>" href="profile.php">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold <?php echo ($title == 'Page de contact') ? 'active' : ''; ?>" 
-                            href="contacts.php">Contacts</a>
+                            <a class="nav-link fw-semibold <?php echo ($title == 'Page de contact') ? 'active' : ''; ?>" href="contacts.php">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold <?php echo ($title == 'Page de Connexion') ? 'active' : ''; ?>" href="login.php">Connexion</a>
                         </li>
                     </ul>
                 </div>

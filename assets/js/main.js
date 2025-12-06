@@ -1,24 +1,34 @@
 let count = 1
 let form = document.forms["connectionForm"]
+let password = document.querySelector(".password")
+let confirmPassword = document.querySelector(".confirm-password")
 
-document.querySelector(".password").addEventListener("click", ()=>{
+password.addEventListener("click", ()=>{
     count++;
     if (count % 2 == 0) {  
-        document.querySelector(".password").innerHTML ='<i class="bi bi-unlock-fill"></i>'
+        password.innerHTML ='<i class="bi bi-unlock-fill"></i>'
         form.password.setAttribute("type", "text")
     } else if (count % 2 == 1){
-        document.querySelector(".password").innerHTML ='<i class="bi bi-lock-fill"></i>'
+        password.innerHTML ='<i class="bi bi-lock-fill"></i>'
         form.password.setAttribute("type", "password")
     }
 })
 
-document.querySelector(".confirm-password").addEventListener("click", ()=>{
+confirmPassword.addEventListener("click", ()=>{
     count++;
     if (count % 2 == 0) {  
-        document.querySelector(".confirm-password").innerHTML ='<i class="bi bi-unlock-fill"></i>'
+        confirmPassword.innerHTML ='<i class="bi bi-unlock-fill"></i>'
         form.confirmPassword.setAttribute("type", "text")
     } else if (count % 2 == 1){
-        document.querySelector(".confirm-password").innerHTML ='<i class="bi bi-lock-fill"></i>'
+        confirmPassword.innerHTML ='<i class="bi bi-lock-fill"></i>'
         form.confirmPassword.setAttribute("type", "password")
+    }
+})
+
+form.confirmPassword.addEventListener("input", ()=>{
+    if (form.confirmPassword.value.toLowerCase().trim() !== form.password.value.toLowerCase().trim()) {
+        document.querySelector(".password-check-container").innerHTML = "<div class='text-danger'>your password doesn't match</div>"
+    }else{
+        document.querySelector(".password-check-container").innerHTML = ""
     }
 })

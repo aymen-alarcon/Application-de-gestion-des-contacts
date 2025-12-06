@@ -7,8 +7,29 @@ body{
     cursor: pointer;
 }
 
+.nav-link.active {
+    font-weight: 800; 
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+    width: 70%;
+    height: 3px;
+    background: #0d6efd; 
+    border-radius: 2px;
+}
+
 input{
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
     background-color: #f6f6f8 !important;
+}
+
+.border-dashed{
+    border: 2px dashed #0d6efd !important;
+    background-color: rgb(222 237 252) !important;
 }

@@ -1,0 +1,12 @@
+body{
+    height: 100vh;
+}
+
+.d-flex.align-items-center.justify-content-center.text-dark.p-2.rounded-start{
+    background-color: #f6f6f8;
+}
+input{
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    background-color: #f6f6f8 !important;
+}

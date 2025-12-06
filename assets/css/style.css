@@ -2,7 +2,7 @@ body{
     height: 100vh;
 }
 
-.password, .confirm-password{
+.password, .confirm-password, .name-email{
     background-color: #f6f6f8;
     cursor: pointer;
 }

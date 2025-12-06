@@ -2,8 +2,8 @@
     $title = "Page de Connexion";
     include '../includes/header.php';
 ?>
-    <main>
-        <section class="container d-flex flex-column justify-content-center align-items-center min-vh-100 py-4">
+    <main class="pt-5">
+        <section class="container d-flex flex-column justify-content-center align-items-center py-4">
             <div class="card-custom bg-white shadow p-4 p-sm-5 rounded-3 w-50">
                 <h2 class="fw-bold text-center mb-4">
                     Connectez-vous à votre compte
@@ -12,7 +12,7 @@
                     <div class="mb-3">
                         <label class="form-label fw-semibold small text-secondary">Nom d'utilisateur ou e-mail</label>
                         <div class="d-flex">
-                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border">
+                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-person-fill"></i>
                             </div>
                             <input type="text" class="form-control rounded-end" placeholder="Entrez votre nom d'utilisateur ou e-mail">

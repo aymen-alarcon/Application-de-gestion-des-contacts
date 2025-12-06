@@ -4,15 +4,15 @@
 ?>
     <main>
         <section class="container d-flex justify-content-center align-items-center min-vh-100 py-4">
-            <div class="card shadow-sm p-4 p-sm-5" style="max-width: 450px; width: 100%; border-radius: 1rem;">
+            <div class="card shadow w-50 p-4 p-sm-5">
                 <div class="text-center mb-4">
-                    <h1 class="fw-black" style="font-size: 32px; color: #0d121b;">Créer un Compte</h1>
+                    <h1 class="fw-black">Créer un Compte</h1>
                 </div>
-                <form id="connectionForm" class="d-flex flex-column gap-3">
+                <form id="connectionForm" class="d-flex flex-column gap-3" action="createAccount.php" method="POST">
                     <div class="mb-3">
                         <label class="form-label fw-semibold small text-secondary">Adresse e-mail</label>
                         <div class="d-flex">
-                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border">
+                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-person-fill"></i>
                             </div>
                             <input type="text" class="form-control rounded-end" placeholder="Entrez votre adresse e-mail">
@@ -21,7 +21,7 @@
                     <div class="mb-3">
                         <label class="form-label fw-semibold small text-secondary">Nom d'utilisateur</label>
                         <div class="d-flex">
-                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border">
+                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-person-fill"></i>
                             </div>
                             <input type="text" class="form-control rounded-end" placeholder="Entrez votre nom d'utilisateur">
@@ -45,9 +45,7 @@
                             <input type="password" name="confirmPassword" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
                         </div>
                     </div>
-                    <button class="btn text-white fw-bold w-100 py-3" style="background-color:#135bec; border-radius: 0.75rem; height:56px;">
-                        Créer un compte
-                    </button>
+                    <button class="btn btn-primary text-white fw-bold w-100 py-3">Créer un compte</button>
                 </form>
                 <div class="text-center mt-4">
                     <p class="text-secondary small">

@@ -2,9 +2,11 @@ body{
     height: 100vh;
 }
 
-.d-flex.align-items-center.justify-content-center.text-dark.p-2.rounded-start{
+.password, .confirm-password{
     background-color: #f6f6f8;
+    cursor: pointer;
 }
+
 input{
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;

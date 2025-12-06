@@ -8,7 +8,7 @@
                 <h2 class="fw-bold text-center mb-4">
                     Connectez-vous à votre compte
                 </h2>
-                <form id="connectionForm">
+                <form id="connectionForm" action="connectToAccount.php" method="POST">
                     <div class="mb-3">
                         <label class="form-label fw-semibold small text-secondary">Nom d'utilisateur ou e-mail</label>
                         <div class="d-flex">
@@ -21,7 +21,7 @@
                     <div class="mb-2">
                         <label class="form-label fw-semibold small text-secondary">Mot de passe</label>
                         <div class="d-flex">
-                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border" id="password">
+                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border password">
                                 <i class="bi bi-lock-fill"></i>
                             </div>
                             <input type="password" name="password" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
@@ -34,7 +34,7 @@
                 </form>
                 <div class="text-center mt-4 d-flex justify-content-center gap-2">
                     <p class="text-secondary small m-0">Pas encore de compte ?</p>
-                    <a href="#" class="text-primary-custom small fw-semibold text-decoration-underline">Créer un compte</a>
+                    <a href="register.php" class="text-primary-custom small fw-semibold text-decoration-underline">Créer un compte</a>
                 </div>
             </div>
         </section>

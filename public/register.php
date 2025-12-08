@@ -2,25 +2,8 @@
     $title = "Créer un Compte";
     include '../includes/header.php';
 
-    if (isset($_GET["emailError"])) {
-        $emailErr = $_GET["emailError"];
-        echo "<script>alert('". $emailErr ."');</script>";
-    }
-    if (isset($_GET["fnameError"])) {
-        $firstNameErr = $_GET["fnameError"];
-        echo "<script>alert('". $firstNameErr ."');</script>";
-    }
-    if (isset($_GET["lnameError"])) {
-        $lastNameErr = $_GET["lnameError"];
-        echo "<script>alert('". $lastNameErr ."');</script>";
-    }
-    if (isset($_GET["passwordError"])) {
-        $passwordErr = $_GET["passwordError"];
-        echo "<script>alert('". $passwordErr ."');</script>";
-    }
-    if (isset($_GET["confirmPasswordError"])) {
-        $confirmPasswordErr = $_GET["confirmPasswordError"];
-        echo "<script>alert('". $confirmPasswordErr ."');</script>";
+    if (isset($_GET["errorMessage"])) {
+        echo "<script>alert('". $_GET["errorMessage"] ."');</script>";
     }
 ?>
     <main>
@@ -36,7 +19,7 @@
                             <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-envelope-fill"></i>
                             </div>
-                            <input required type="text" class="form-control rounded-end" name="email" placeholder="Entrez votre adresse e-mail">
+                            <input type="text" class="form-control rounded-end" name="email" placeholder="Entrez votre adresse e-mail">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -45,7 +28,7 @@
                             <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <input required type="text" class="form-control rounded-end" name="firstName" placeholder="Entrez votre nom d'utilisateur">
+                            <input type="text" class="form-control rounded-end" name="firstName" placeholder="Entrez votre nom d'utilisateur">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -54,7 +37,7 @@
                             <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <input required type="text" class="form-control rounded-end" name="lastName" placeholder="Entrez votre nom d'utilisateur">
+                            <input type="text" class="form-control rounded-end" name="lastName" placeholder="Entrez votre nom d'utilisateur">
                         </div>
                     </div>
                     <div class="mb-2">
@@ -63,7 +46,7 @@
                             <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border password">
                                 <i class="bi bi-lock-fill"></i>
                             </div>
-                            <input required type="password" name="password" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
+                            <input type="password" name="password" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
                         </div>
                     </div>
                     <div class="mb-2">
@@ -73,7 +56,7 @@
                                 <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border confirm-password">
                                     <i class="bi bi-lock-fill"></i>
                                 </div>
-                                <input required type="password" name="confirmPassword" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
+                                <input type="password" name="confirmPassword" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
                             </div>
                             <div class="password-check-container"></div>
                         </div>

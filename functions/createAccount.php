@@ -1,34 +1,28 @@
 <?php
+    session_start()
+    include "../config/db.php";
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["email"])) {      
-            $emailErr = "Email is required";  
-            header("Location: ../public/register.php?emailError= " . urlencode($emailErr)); 
+        if (empty($_POST["email"]) || empty($_POST["firstName"]) || empty($_POST["lastName"]) || empty($_POST["password"]) || empty($_POST["confirmPassword"])) {      
+            $error = "you can't leave an empty input";  
+            header("Location: ../public/register.php?errorMessage= " . urlencode($error)); 
         }else{
-            $email = htmlspecialchars($_POST["email"]);
-        }
-        if (empty($_POST["firstName"])) {   
-            $firstNameErr = "First Name is required";     
-            header("Location: ../public/register.php?fnameError= " . urlencode($firstNameErr)); 
-        }else {
             $firstName = htmlspecialchars($_POST["firstName"]);
-        }
-        if (empty($_POST["lastName"])) {            
-            $lastNameErr = "Last Name is required";     
-            header("Location: ../public/register.php?lnameError= " . urlencode($lastNameErr)); 
-        }else {
             $lastName = htmlspecialchars($_POST["lastName"]);
-        }
-        if (empty($_POST["password"])) {            
-            $passwordErr = "Password is required";     
-            header("Location: ../public/register.php?passwordError= " . urlencode($passwordErr)); 
-        }else {
+            $email = htmlspecialchars($_POST["email"]);
             $password = htmlspecialchars($_POST["password"]);
         }
-        if (empty($_POST["confirmPassword"])) {            
-            $confirmPasswordErr = "Confirm Password is required";     
-            header("Location: ../public/register.php?confirmPasswordError= " . urlencode($confirmPasswordErr)); 
-        }else {
-            $confirmPassword = htmlspecialchars($_POST["confirmPassword"]);
-        }
+
+        $sql = "INSERT INTO users (firstName, lastName, email, password) VALUES (:firstName, :lastName, :email, :password)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':firstName', $firstName);
+        $stmt->bindParam(':lastName', $lastName);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+        $userId = $conn->lastInsertId();
+        $_SESSION["id"] = $userId;
+        header("Location: ../public/profile.php?id=" . urlencode($userId));
+        exit;
     }
 ?>

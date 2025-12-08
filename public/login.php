@@ -8,14 +8,14 @@
                 <h2 class="fw-bold text-center mb-4">
                     Connectez-vous à votre compte
                 </h2>
-                <form id="connectionForm" action="connectToAccount.php" method="POST">
+                <form id="connectionForm" action="../functions/connectToAccount.php" method="POST">
                     <div class="mb-3">
-                        <label class="form-label fw-semibold small text-secondary">Nom d'utilisateur ou e-mail</label>
+                        <label class="form-label fw-semibold small text-secondary">e-mail</label>
                         <div class="d-flex">
                             <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <input require type="text" class="form-control rounded-end" placeholder="Entrez votre nom d'utilisateur ou e-mail">
+                            <input require type="text" name="email" class="form-control rounded-end" placeholder="Entrez votre nom d'utilisateur ou e-mail">
                         </div>
                     </div>
                     <div class="mb-2">

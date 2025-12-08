@@ -20,8 +20,11 @@
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
         $stmt->execute();
+        
         $userId = $conn->lastInsertId();
         $_SESSION["id"] = $userId;
+        $_SESSION['session_start_time'] = time();
+
         header("Location: ../public/profile.php?id=" . urlencode($userId));
         exit;
     }

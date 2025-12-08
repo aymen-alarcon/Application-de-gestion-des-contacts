@@ -1,4 +1,14 @@
-<?php include "../config/db.php"?>
+<?php 
+    session_start();
+    include "../config/db.php";
+
+    if (isset($_SESSION["id"])) {
+        $sql = "SELECT * FROM users WHERE id = ?";
+        $stmt = $conn -> prepare($sql);
+        $stmt -> execute([$_SESSION['id']]);
+        $userInfo = $stmt -> fetch(PDO::FETCH_ASSOC);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +38,15 @@
                             <a class="nav-link fw-semibold <?php echo ($title == 'Page de contact') ? 'active' : ''; ?>" href="contacts.php">Contacts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold <?php echo ($title == 'Page de Connexion') ? 'active' : ''; ?>" href="login.php">Connexion</a>
+                            <?php if (!isset($_SESSION["id"])): ?>
+                                <a class="nav-link fw-semibold <?= ($title == 'Page de Connexion') ? 'active' : '' ?>" href="login.php">
+                                    Connexion
+                                </a>
+                            <?php else: ?>
+                                <span class="nav-link fw-semibold">
+                                    <?php echo $userInfo["firstName"] . " ". $userInfo["lastName"]; ?>
+                            </span>
+                            <?php endif; ?>
                         </li>
                     </ul>
                 </div>

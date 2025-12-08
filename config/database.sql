@@ -5,7 +5,8 @@ CREATE TABLE users (
     firstName VARCHAR(25), 
     lastName VARCHAR(25), 
     email VARCHAR(25), 
-    password VARCHAR(25)
+    password VARCHAR(25),
+    dateInscription TIMESTAMP
 )
 
 CREATE TABLE contacts (

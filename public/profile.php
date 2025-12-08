@@ -5,7 +5,7 @@
     <div class="container-fluid mt-4 p-5">
         <main>
             <header class="mb-4">
-                <h1 class="fw-bold display-6">Bienvenue, Aymen.Oumaalla!</h1>
+                <h1 class="fw-bold display-6">Bienvenue, <?php echo $userInfo["firstName"];?> <?php echo $userInfo["lastName"];?>!</h1>
                 <p class="text-muted">Gérez les informations de votre profil et vos paramètres ici.</p>
             </header>
             <section class="card p-4 shadow-sm mb-4">
@@ -13,9 +13,9 @@
 
                 <div class="row pt-4 gy-3">
                     <div class="col-md-3 text-muted">Nom d'utilisateur</div>
-                    <div class="col-md-9">Aymen.Oumaalla</div>
+                    <div class="col-md-9"><?php echo $userInfo["firstName"];?> <?php echo $userInfo["lastName"];?></div>
                     <div class="col-md-3 text-muted">Email</div>
-                    <div class="col-md-9">Aymen.Oumaalla@gmail.com</div>
+                    <div class="col-md-9"><?php echo $userInfo["firstName"];?>.<?php echo $userInfo["lastName"];?>@gmail.com</div>
                     <div class="col-md-3 text-muted">Date d'inscription</div>
                     <div class="col-md-9">26 octobre 2023</div>
                 </div>

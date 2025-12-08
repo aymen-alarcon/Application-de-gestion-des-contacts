@@ -66,17 +66,17 @@
                     <form>
                         <div class="mb-3">
                             <label for="name" class="form-label">Nom</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Aymen Oumaalla" minlength="2" required>
+                            <input require type="text" class="form-control" id="name" name="name" placeholder="Aymen Oumaalla" minlength="2" required>
                             <div class="form-text">Requis, 2 caractères minimum.</div>
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">Téléphone</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" pattern="[+\-\s\(\)0-9]*" placeholder="+212 629 474 030">
+                            <input require type="tel" class="form-control" id="phone" name="phone" pattern="[+\-\s\(\)0-9]*" placeholder="+212 629 474 030">
                             <div class="form-text">Optionnel.</div>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Aymen.Oumaalla@email.com" required>
+                            <input require type="email" class="form-control" id="email" name="email" placeholder="Aymen.Oumaalla@email.com" required>
                             <div class="form-text">Requis, format email valide.</div>
                         </div>
                         <div class="mb-3">

@@ -15,7 +15,7 @@
                             <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <input type="text" class="form-control rounded-end" placeholder="Entrez votre nom d'utilisateur ou e-mail">
+                            <input require type="text" class="form-control rounded-end" placeholder="Entrez votre nom d'utilisateur ou e-mail">
                         </div>
                     </div>
                     <div class="mb-2">
@@ -24,7 +24,7 @@
                             <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border password">
                                 <i class="bi bi-lock-fill"></i>
                             </div>
-                            <input type="password" name="password" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
+                            <input require type="password" name="password" class="form-control rounded-end" placeholder="Entrez votre mot de passe">
                         </div>
                     </div>
                     <div class="text-end mb-3">

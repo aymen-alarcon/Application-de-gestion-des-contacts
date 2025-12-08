@@ -8,8 +8,8 @@
                 Bienvenue sur ConnectSys
             </h1>
             <div class="d-flex align-items-center justify-content-center gap-3 px-2">
-                <a href="login.php" class="btn btn-outline-primary btn-rounded">S’inscrire</a>
-                <a href="register.php" class="btn btn-outline-secondary btn-rounded">Se connecter</a>
+                <a href="login.php" class="btn btn-outline-primary btn-rounded">Se connecter</a>
+                <a href="register.php" class="btn btn-outline-secondary btn-rounded">S’inscrire</a>
             </div>
         </section>
     </main>

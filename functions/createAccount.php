@@ -13,7 +13,7 @@
             $password = htmlspecialchars($_POST["password"]);
         }
 
-        $sql = "INSERT INTO users (firstName, lastName, email, password) VALUES (:firstName, :lastName, :email, :password)";
+        $sql = "INSERT INTO users (firstName, lastName, email, password, dateInscription) VALUES (:firstName, :lastName, :email, :password, NOW())";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':firstName', $firstName);
         $stmt->bindParam(':lastName', $lastName);

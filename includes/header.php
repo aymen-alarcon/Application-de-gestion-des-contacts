@@ -31,23 +31,29 @@
                 </a>
                 <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
                     <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link fw-semibold <?php echo ($title == 'Page de profile') ? 'active' : ''; ?>" href="profile.php">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-semibold <?php echo ($title == 'Page de contact') ? 'active' : ''; ?>" href="contacts.php">Contacts</a>
-                        </li>
-                        <li class="nav-item">
-                            <?php if (!isset($_SESSION["id"])): ?>
+                        <?php if (isset($_SESSION["id"])): ?>
+                            <li class="nav-item">
+                                <a class="nav-link fw-semibold <?= ($title == 'Page de profile') ? 'active' : '' ?>" href="profile.php">
+                                    Profile
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-semibold <?= ($title == 'Page de contact') ? 'active' : '' ?>" href="contacts.php">
+                                    Contacts
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-semibold <?= ($title == 'Page de Connexion') ? 'active' : '' ?>" href="logout.php">
+                                    Déconnecter
+                                </a>
+                            </li>
+                        <?php else: ?>
+                            <li class="nav-item">
                                 <a class="nav-link fw-semibold <?= ($title == 'Page de Connexion') ? 'active' : '' ?>" href="login.php">
                                     Connexion
                                 </a>
-                            <?php else: ?>
-                                <span class="nav-link fw-semibold">
-                                    <?php echo $userInfo["firstName"] . " ". $userInfo["lastName"]; ?>
-                            </span>
-                            <?php endif; ?>
-                        </li>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>

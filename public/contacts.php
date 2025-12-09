@@ -41,12 +41,12 @@
                                                 <td>' . $contact["firstName"] . '.' . $contact["lastName"] . '@email.com</td>
                                                 <td>Darna</td>
                                                 <td class="table-actions">
-                                                    <a href="" class="btn btn-link text-primary text-decoration-underline nav-link">Modifier</a>
-                                                    <a href="../functions/deleteContact.php?contactId= '. urlencode($contact["id"])'" class="btn btn-link text-danger text-decoration-underline nav-link">Supprimer</button>
+                                                    <a href="" class="text-primary text-decoration-underline">Modifier</a>
+                                                    <a href="../functions/deleteContact.php?contactId= '. urlencode($contact["id"]) .'" class="text-danger text-decoration-underline">Supprimer</button>
                                                 </td>
                                             </tr>
                                         ';
-                                    }
+                                    };
                                 ?>
                             </tbody>
                         </table>

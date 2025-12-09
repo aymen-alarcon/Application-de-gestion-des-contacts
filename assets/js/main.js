@@ -3,15 +3,29 @@ let form = document.forms["connectionForm"]
 let password = document.querySelector(".password")
 let confirmPassword = document.querySelector(".confirm-password")
 let contactForm = document.forms["contactForm"]
+let editContactForm = document.forms["editContactForm"]
 
-if (window.location.pathname === '../public/contacts.php') {
+if (window.location.pathname.includes("contacts.php")) {
     contactForm.clearButton.addEventListener("click", ()=>{
         contactForm.reset();
         contactForm.name.focus();
     })
+
+    document.querySelectorAll(".editContactBtn").forEach(btn => {
+        btn.addEventListener("click", function() {
+            editContactForm.id.value = this.dataset.id;
+            editContactForm.nom.value = this.dataset.fname;
+            editContactForm.prenom.value = this.dataset.lname;
+            editContactForm.phone.value = this.dataset.phone;
+            editContactForm.email.value = this.dataset.email;
+            editContactForm.ville.value = this.dataset.city;
+            editContactForm.paye.value = this.dataset.country;
+            editContactForm.restofaddress.value = this.dataset.rest;
+        });
+    });
 }
 
-if (window.location.pathname === '../public/register.php' || window.location.pathname === '../public/login.php') {
+if (window.location.pathname.includes("register.php") || window.location.pathname.includes("login.php")) {
     password.addEventListener("click", ()=>{
         count++;
         if (count % 2 == 0) {  

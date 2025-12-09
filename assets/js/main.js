@@ -4,8 +4,24 @@ let password = document.querySelector(".password")
 let confirmPassword = document.querySelector(".confirm-password")
 let contactForm = document.forms["contactForm"]
 let editContactForm = document.forms["editContactForm"]
+let searchBar = document.getElementById("search")
 
 if (window.location.pathname.includes("contacts.php")) {
+    searchBar.addEventListener("change", ()=>{
+        document.querySelectorAll(".nameOfContact").forEach(nameOfContact =>{
+            let parentElement = nameOfContact.parentElement
+            console.log(nameOfContact.textContent);
+            console.log(parentElement);
+            console.log(searchBar.value);          
+            if (searchBar.value.includes(nameOfContact.textContent)) {
+                parentElement.classList.remove("d-none")
+            }else{
+                parentElement.classList.add("d-none")
+                console.log(2);
+            }
+        })
+    })
+
     contactForm.clearButton.addEventListener("click", ()=>{
         contactForm.reset();
         contactForm.name.focus();

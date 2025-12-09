@@ -69,6 +69,8 @@
         <h1 class="display-5 fw-bold">Gestion de Contacts</h1>
         <div class="row g-4">
             <section class="col-lg-8">
+                <label for="search">Search</label>
+                <input type="search" id="search" class="form-control mb-3">
                 <div class="card border border-custom shadow-sm">
                     <div class="card-header">
                         <h2 class="h5 fw-bold mb-0">Liste des contacts</h2>
@@ -89,8 +91,8 @@
                                     <?php
                                         foreach ($userContacts as $contact) {
                                             echo '
-                                                <tr>
-                                                    <td>' . $contact["firstName"] . ' ' . $contact["lastName"] . '</td>
+                                                <tr class="contactInfo">
+                                                    <td class="nameOfContact">' . $contact["firstName"] . ' ' . $contact["lastName"] . '</td>
                                                     <td>' . $contact["phone"] . '</td>
                                                     <td>' . $contact["email"] . '</td>
                                                     <td>'. $contact["city"] . ' | ' . $contact["country"] .' | ' . $contact["restOfAddress"] . '</td>

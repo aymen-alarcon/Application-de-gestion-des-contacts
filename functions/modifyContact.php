@@ -10,15 +10,16 @@
             $id = $_POST["id"];
             $fname = htmlspecialchars($_POST["nom"]);
             $lname = htmlspecialchars($_POST["prenom"]);
+            $email = htmlspecialchars($_POST["email"]);
             $phone = htmlspecialchars($_POST["phone"]);
             $city = htmlspecialchars($_POST["ville"]);
             $country = htmlspecialchars($_POST["paye"]);
             $restofadress = htmlspecialchars($_POST["restofaddress"]);
         }
 
-        $sql = "UPDATE contacts SET firstName = ?, lastName = ?, phone = ?, city = ?, country = ?, restOfAddress = ? WHERE id = ? AND userId = ?";
+        $sql = "UPDATE contacts SET firstName = ?, lastName = ?, email = ?, phone = ?, city = ?, country = ?, restOfAddress = ? WHERE id = ? AND userId = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->execute([$fname, $lname, $phone, $city, $country, $rest, $id, $_SESSION["id"]]);  
+        $stmt->execute([$fname, $lname, $email, $phone, $city, $country, $restofadress, $id, $_SESSION["id"]]);  
         
         header("Location: ../public/contacts.php");
         exit;

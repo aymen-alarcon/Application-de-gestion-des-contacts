@@ -43,17 +43,17 @@
                         </div>
                         <div class="mb-3">
                             <label for="Ville" class="form-label">Ville</label>
-                            <input class="form-control" name="ville" rows="4" maxlength="255" placeholder="Marrakech">
+                            <input class="form-control" name="ville" placeholder="Marrakech">
                             <div class="form-text">Optionnel</div>
                         </div>
                         <div class="mb-3">
                             <label for="Paye" class="form-label">Paye</label>
-                            <input class="form-control" name="paye" rows="4" maxlength="255" placeholder="Maroc">
+                            <input class="form-control" name="paye" placeholder="Maroc">
                             <div class="form-text">Optionnel</div>
                         </div>
                         <div class="mb-3">
                             <label for="restOfAddress" class="form-label">rest Of the Address</label>
-                            <input class="form-control" name="restofaddress" rows="4" maxlength="255" placeholder="4000">
+                            <input class="form-control" name="restofaddress" placeholder="4000">
                             <div class="form-text">Optionnel</div>
                         </div>
                         <div class="d-flex justify-content-center w-100 gap-2">
@@ -151,17 +151,17 @@
                             </div>
                             <div class="mb-3">
                                 <label for="Ville" class="form-label">Ville</label>
-                                <input class="form-control" id="Ville" name="ville" rows="4" maxlength="255" placeholder="Marrakech">
+                                <input class="form-control" id="Ville" name="ville" placeholder="Marrakech">
                                 <div class="form-text">Optionnel</div>
                             </div>
                             <div class="mb-3">
                                 <label for="Paye" class="form-label">Paye</label>
-                                <input class="form-control" id="Paye" name="paye" rows="4" maxlength="255" placeholder="Maroc">
+                                <input class="form-control" id="Paye" name="paye" placeholder="Maroc">
                                 <div class="form-text">Optionnel</div>
                             </div>
                             <div class="mb-3">
                                 <label for="restOfAddress" class="form-label">rest Of the Address</label>
-                                <input class="form-control" id="restOfAddress" name="restofaddress" rows="4" maxlength="255" placeholder="4000">
+                                <input class="form-control" id="restOfAddress" name="restofaddress" placeholder="4000">
                                 <div class="form-text">Optionnel</div>
                             </div>
                             <div class="d-flex justify-content-center w-100 gap-2">

@@ -27,8 +27,14 @@ if (window.location.pathname.includes("contacts.php")) {
         contactForm.name.focus();
     })
 
-    document.querySelectorAll(".editContactBtn").forEach(btn => {
-        btn.addEventListener("click", function() {
+    document.querySelectorAll(".deleteContactBtn").forEach(deleteBtn =>{
+        deleteBtn.addEventListener("click", function(){
+            document.getElementById("idContact").value = this.dataset.id;
+        })
+    })
+
+    document.querySelectorAll(".editContactBtn").forEach(editBtn => {
+        editBtn.addEventListener("click", function() {
             editContactForm.id.value = this.dataset.id;
             editContactForm.nom.value = this.dataset.fname;
             editContactForm.prenom.value = this.dataset.lname;

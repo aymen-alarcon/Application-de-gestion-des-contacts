@@ -82,7 +82,9 @@ php -S localhost:8000 -t public
 Puis accéder :
 	http://localhost:8000
 
-** Bonus implémentés (le cas échéant)
+** Bonus implémentés 
+
+Confirmation avant suppression
 
 Recherche de contacts
 

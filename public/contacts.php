@@ -65,6 +65,24 @@
             </div>
         </div>
     </div>
+    
+    <div class="modal fade" id="deleteContact" tabindex="-1" role="dialog" aria-labelledby="deleteContactLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteContactLabel">Are you sure you want to Delete Contact</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="../functions/deleteContact.php" method="POST">
+                        <input type="hidden" name="idContact" id="idContact">
+                        <button type="submit" class="btn btn-danger">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main class="px-4 py-4">
         <h1 class="display-5 fw-bold">Gestion de Contacts</h1>
         <div class="row g-4">
@@ -112,7 +130,7 @@
                                                             >
                                                             Modifier
                                                         </a>
-                                                        <a href="../functions/deleteContact.php?contactId= '. urlencode($contact["id"]) .'" class="text-danger text-decoration-underline">Supprimer</button>
+                                                        <a href="#" data-id="'. $contact['id'] .'" data-bs-toggle="modal" data-bs-target="#deleteContact" class="text-danger text-decoration-underline deleteContactBtn">Supprimer</a>
                                                     </td>
                                                 </tr>
                                             ';

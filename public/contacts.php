@@ -5,6 +5,11 @@
     if (isset($_GET["errorMessage"])) {
         echo "<script>alert('" . $_GET["errorMessage"] . "')</script>";
     }
+
+    $sql = "SELECT * FROM contacts WHERE userId = ?";
+    $stmt = $conn -> prepare($sql);
+    $stmt -> execute([$_SESSION["id"]]);
+    $userContacts = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 ?>
 <main class="container py-4">
     <h1 class="display-5 fw-bold">Gestion de Contacts</h1>
@@ -27,34 +32,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Aymen Oumaalla</td>
-                                    <td>+212 629 474 030</td>
-                                    <td>Aymen.Oumaalla@email.com</td>
-                                    <td>Darna</td>
-                                    <td class="table-actions">
-                                        <button class="btn btn-link text-primary nav-link">
-                                            <i class="bi bi-pencil-fill"></i> Modifier
-                                        </button>
-                                        <button class="btn btn-link text-danger nav-link">
-                                            <i class="bi bi-trash-fill"></i> Supprimer
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Saad Oumaalla</td>
-                                    <td>+212 629 474 030</td>
-                                    <td>Saad.Oumaalla@email.com</td>
-                                    <td>Darhoum</td>
-                                    <td class="table-actions">
-                                        <button class="btn btn-link text-primary nav-link">
-                                            <i class="bi bi-pencil-fill"></i> Modifier
-                                        </button>
-                                        <button class="btn btn-link text-danger nav-link">
-                                            <i class="bi bi-trash-fill"></i> Supprimer
-                                        </button>
-                                    </td>
-                                </tr>
+                                <?php
+                                    foreach ($userContacts as $contact) {
+                                        echo '
+                                            <tr>
+                                                <td>' . $contact["firstName"] . ' ' . $contact["lastName"] . '</td>
+                                                <td>+212 629 474 030</td>
+                                                <td>' . $contact["firstName"] . '.' . $contact["lastName"] . '@email.com</td>
+                                                <td>Darna</td>
+                                                <td class="table-actions">
+                                                    <a href="" class="btn btn-link text-primary text-decoration-underline nav-link">Modifier</a>
+                                                    <a href="../functions/deleteContact.php?contactId= '. urlencode($contact["id"])'" class="btn btn-link text-danger text-decoration-underline nav-link">Supprimer</button>
+                                                </td>
+                                            </tr>
+                                        ';
+                                    }
+                                ?>
                             </tbody>
                         </table>
                     </div>

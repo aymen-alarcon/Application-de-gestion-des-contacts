@@ -17,5 +17,7 @@ CREATE TABLE contacts (
     email VARCHAR(25),
     city VARCHAR (25),
     country VARCHAR (25),
-	restOfAddress VARCHAR(25)
+	restOfAddress VARCHAR(25),    
+    userId int,
+    FOREIGN KEY (userId) REFERENCES users(id)
 )

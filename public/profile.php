@@ -40,7 +40,7 @@
             <section class="card border-dashed p-4 shadow-sm">
                 <h3 class="fw-bold mb-2">Gérer les Contacts</h3>
                 <p class="text-muted">Organisez et accédez à votre liste de contacts personnels et professionnels.</p>
-                <a href="contacts.php" class="btn btn-primary d-flex align-items-center gap-2 px-4 py-2 mt-2 w-25">
+                <a href="contacts.php?userId=<?php echo $_SESSION["id"]?>" class="btn btn-primary d-flex align-items-center gap-2 px-4 py-2 mt-2 w-25">
                     Gérer mes contacts <i class="bi bi-arrow-right"></i>
                 </a>
             </section>

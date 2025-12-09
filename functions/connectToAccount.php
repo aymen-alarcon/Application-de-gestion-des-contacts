@@ -18,7 +18,7 @@
         if ($userLoginCredentials !== false) {
             session_start();
             $_SESSION["id"] = $userLoginCredentials["id"];
-            header("Location: ../public/profile.php");
+            header("Location: ../public/profile.php?id=" . urlencode($_SESSION["id"]));
         }
     }
 ?>

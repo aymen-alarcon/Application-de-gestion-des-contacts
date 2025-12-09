@@ -70,12 +70,12 @@
                     <form method="POST" id="contactForm" action="../functions/createNewContact.php">
                         <div class="mb-3">
                             <label for="name" class="form-label">Nom</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Aymen Oumaalla" minlength="2">
+                            <input type="text" class="form-control" id="name" name="nom" placeholder="Aymen Oumaalla" minlength="2">
                             <div class="form-text">Requis, 2 caractères minimum.</div>
                         </div>
                         <div class="mb-3">
                             <label for="Prénom" class="form-label">Prénom</label>
-                            <input type="text" class="form-control" id="Prénom" name="Prenom" placeholder="Aymen Oumaalla" minlength="2">
+                            <input type="text" class="form-control" id="Prénom" name="prenom" placeholder="Aymen Oumaalla" minlength="2">
                             <div class="form-text">Requis, 2 caractères minimum.</div>
                         </div>
                         <div class="mb-3">

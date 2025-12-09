@@ -8,14 +8,27 @@
             header("Location: ../public/contacts.php?errorMessage=" . urlencode($errorMessage));
         }else{
             $fname = htmlspecialchars($_POST["nom"]);
-            $fname = htmlspecialchars($_POST["prenom"]);
-            $fname = htmlspecialchars($_POST["phone"]);
-            $fname = htmlspecialchars($_POST["email"]);
-            $fname = htmlspecialchars($_POST["ville"]);
-            $fname = htmlspecialchars($_POST["paye"]);
-            $fname = htmlspecialchars($_POST["restofaddress"]);
+            $lname = htmlspecialchars($_POST["prenom"]);
+            $phone = htmlspecialchars($_POST["phone"]);
+            $email = htmlspecialchars($_POST["email"]);
+            $city = htmlspecialchars($_POST["ville"]);
+            $country = htmlspecialchars($_POST["paye"]);
+            $restofaddress = htmlspecialchars($_POST["restofaddress"]);
         }
 
-        
+        if (isset($_SESSION["id"])) {
+            $sql = "INSERT INTO contacts (firstName, lastName, phone, email, city, country,	restOfAddress, userId) VALUES (:firstName, :lastName, :phone, :email, :city, :country, :restOfAddress, :userId)";
+            $stmt = $conn -> prepare($sql);
+            $stmt -> bindParam(":firstName", $fname);
+            $stmt -> bindParam(":lastName", $lname);
+            $stmt -> bindParam(":phone", $phone);
+            $stmt -> bindParam(":email", $email);
+            $stmt -> bindParam(":city", $city);
+            $stmt -> bindParam(":country", $country);
+            $stmt -> bindParam(":restOfAddress", $restofaddress);
+            $stmt -> bindParam(":userId", $_SESSION["id"]);
+            $stmt -> execute();
+            header("Location: ../public/contacts.php?id=" . urlencode($_SESSION["id"]));
+        }
     }
 ?>

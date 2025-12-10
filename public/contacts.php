@@ -83,8 +83,8 @@
         </div>
     </div>
 
-    <main class="px-4 py-4">
-        <h1 class="display-5 fw-bold">Gestion de Contacts</h1>
+    <main class="p-4">
+        <h1>Gestion de Contacts</h1>
         <div class="row g-4">
             <section class="col-lg-8">
                 <div class="d-flex align-items-center gap-2 mb-3">
@@ -92,8 +92,7 @@
                         <label for="search" class="form-label">Search</label>
                         <input type="search" id="search" class="form-control">
                     </div>
-
-                    <div style="width: 180px;">
+                    <div>
                         <label for="sort" class="form-label">Sort by</label>
                         <select id="sort" class="form-select">
                             <option value="name_asc">Name (A → Z)</option>
@@ -103,7 +102,7 @@
                 </div>
                 <div class="card border border-custom shadow-sm">
                     <div class="card-header">
-                        <h2 class="h5 fw-bold mb-0">Liste des contacts</h2>
+                        <h2>Liste des contacts</h2>
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
@@ -155,9 +154,9 @@
                 </div>
             </section>
             <aside class="col-lg-4">
-                <div class="card border border-custom shadow-sm sticky-top" style="top: 2rem;">
+                <div class="card border shadow-sm">
                     <div class="card-header">
-                        <h2 class="h5 fw-bold mb-0">Ajouter un contact</h2>
+                        <h3>Ajouter un contact</h3>
                     </div>
                     <div class="card-body">
                         <form method="POST" id="contactForm" action="../functions/createNewContact.php">

@@ -33,3 +33,11 @@ input{
     border: 2px dashed #0d6efd !important;
     background-color: rgb(222 237 252) !important;
 }
+
+.col-md-2{
+    height: 5rem;
+}
+
+.rounded-circle{
+    height: -webkit-fill-available;
+}

@@ -10,9 +10,6 @@ if (window.location.pathname.includes("contacts.php")) {
     searchBar.addEventListener("change", ()=>{
         document.querySelectorAll(".nameOfContact").forEach(nameOfContact =>{
             let parentElement = nameOfContact.parentElement
-            console.log(nameOfContact.textContent);
-            console.log(parentElement);
-            console.log(searchBar.value);          
             if (searchBar.value.includes(nameOfContact.textContent)) {
                 parentElement.classList.remove("d-none")
             }else{

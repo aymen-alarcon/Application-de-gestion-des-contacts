@@ -23,35 +23,27 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg border-bottom px-3" style="background-color: #f6f6f8; height: 64px;">
+        <nav class="navbar navbar-expand-lg border-bottom bg-light px-3">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="index.php">
-                    <img src="../assets/img/logo.png" alt="ConnectSys Logo" height="36" class="me-2">
+                    <img src="../assets/img/logo.png" height="36" class="me-2">
                     <span class="fw-bold text-dark">ConnectSys</span>
                 </a>
                 <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <?php if (isset($_SESSION["id"])): ?>
                             <li class="nav-item">
-                                <a class="nav-link fw-semibold <?= ($title == 'Page de profile') ? 'active' : '' ?>" href="profile.php">
-                                    Profile
-                                </a>
+                                <a class="nav-link <?= ($title == 'Page de profile') ? 'active' : '' ?>" href="profile.php">Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-semibold <?= ($title == 'Page de contact') ? 'active' : '' ?>" href="contacts.php">
-                                    Contacts
-                                </a>
+                                <a class="nav-link <?= ($title == 'Page de contact') ? 'active' : '' ?>" href="contacts.php">Contacts</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-semibold <?= ($title == 'Page de Connexion') ? 'active' : '' ?>" href="logout.php">
-                                    Déconnecter
-                                </a>
+                                <a class="nav-link <?= ($title == 'Page de Connexion') ? 'active' : '' ?>" href="logout.php">Déconnecter</a>
                             </li>
                         <?php else: ?>
                             <li class="nav-item">
-                                <a class="nav-link fw-semibold <?= ($title == 'Page de Connexion') ? 'active' : '' ?>" href="login.php">
-                                    Connexion
-                                </a>
+                                <a class="nav-link <?= ($title == 'Page de Connexion') ? 'active' : '' ?>" href="login.php">Connexion</a>
                             </li>
                         <?php endif; ?>
                     </ul>

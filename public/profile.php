@@ -13,7 +13,7 @@
                 <h2 class="fs-3 fw-bold border-bottom pb-3">Mes Informations</h2>
 
                 <div class="row pt-4 gy-3">
-                    <div class="col-md-12" style="height: 5rem;"><img src="../<?php if(isset($_SESSION["id"])){ echo $userInfo["profilePicture"] ;}?>" class="rounded-circle" style="height: -webkit-fill-available;" alt=""></div>
+                    <div class="col-md-12" style="height: 5rem;"><img src="<?php if(isset($_SESSION["id"])){ echo $userInfo["profilePicture"] ;}?>" class="rounded-circle" style="height: -webkit-fill-available;" alt=""></div>
                     <div class="col-md-3 text-muted">Nom d'utilisateur</div>
                     <div class="col-md-9"><?php if(isset($_SESSION["id"])){ echo $userInfo["firstName"] ;}?></div>
                     <div class="col-md-3 text-muted">Email</div>

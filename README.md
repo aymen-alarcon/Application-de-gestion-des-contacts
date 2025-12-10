@@ -84,6 +84,8 @@ Puis accéder :
 
 ** Bonus implémentés 
 
+Upload photo de profil
+
 Confirmation avant suppression
 
 Recherche de contacts

@@ -6,6 +6,7 @@ CREATE TABLE users (
     lastName VARCHAR(25), 
     email VARCHAR(25), 
     password VARCHAR(25),
+    profilePicture	varchar(255),
     dateInscription TIMESTAMP
 )
 

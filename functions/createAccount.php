@@ -11,14 +11,19 @@
             $lastName = htmlspecialchars($_POST["lastName"]);
             $email = htmlspecialchars($_POST["email"]);
             $password = htmlspecialchars($_POST["password"]);
+            $extension = pathinfo($_FILES["photo"]["name"], PATHINFO_EXTENSION);
+            $newName = uniqid() . "." . $extension;
+            $profilePath = "uploads/" . $newName;
+            move_uploaded_file($_FILES["photo"]["tmp_name"], "../uploads/" . $newName); 
         }
 
-        $sql = "INSERT INTO users (firstName, lastName, email, password, dateInscription) VALUES (:firstName, :lastName, :email, :password, NOW())";
+        $sql = "INSERT INTO users (firstName, lastName, email, password, profilePicture, dateInscription) VALUES (:firstName, :lastName, :email, :password, :profilePicture, NOW())";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':firstName', $firstName);
         $stmt->bindParam(':lastName', $lastName);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':profilePicture', $profilePath);
         $stmt->execute();
         
         $userId = $conn->lastInsertId();

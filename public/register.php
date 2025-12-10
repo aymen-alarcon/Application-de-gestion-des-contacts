@@ -12,7 +12,16 @@
                 <div class="text-center mb-4">
                     <h1 class="fw-black">Créer un Compte</h1>
                 </div>
-                <form id="connectionForm" class="d-flex flex-column gap-3" action="../functions/createAccount.php" method="POST">
+                <form id="connectionForm" class="d-flex flex-column gap-3" action="../functions/createAccount.php" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small text-secondary">Profile Picture</label>
+                        <div class="d-flex">
+                            <div class="d-flex align-items-center justify-content-center text-dark p-2 rounded-start border name-email">
+                                <i class="bi bi-image-fill"></i>
+                            </div>
+                            <input type="file" class="form-control rounded-end" name="photo">
+                        </div>
+                    </div>
                     <div class="mb-3">
                         <label class="form-label fw-semibold small text-secondary">Adresse e-mail</label>
                         <div class="d-flex">

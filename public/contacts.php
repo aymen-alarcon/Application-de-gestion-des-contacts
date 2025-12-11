@@ -159,7 +159,7 @@
                         <h3>Ajouter un contact</h3>
                     </div>
                     <div class="card-body">
-                        <form method="POST" id="contactForm" action="../functions/createNewContact.php">
+                        <form method="POST" id="contactForm" action="../functions/registerContact.php">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nom</label>
                                 <input type="text" class="form-control" id="name" name="nom" placeholder="Aymen" minlength="2">

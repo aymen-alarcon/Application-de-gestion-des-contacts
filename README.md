@@ -21,6 +21,8 @@ L’ensemble du processus de développement a été organisé via Jira (user sto
 
 le lien de jira https://aymenoumaalla442002.atlassian.net/jira/software/projects/GDC/boards/35
 
+le lien de canva https://www.canva.com/design/DAG7ejiWKgw/kD44msPMLQb_NxbBjxvWGA/edit?utm_content=DAG7ejiWKgw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 ** UML fourni dans le projet
 
 ✔ Diagramme de cas d'utilisation

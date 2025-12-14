@@ -1,6 +1,5 @@
 <?php
     class contact{
-        public $id;
         public $firstName;
         public $lastName;
         public $email;
@@ -10,8 +9,7 @@
         public $rest;
         public $userId;
 
-        function __construct($id, $firstName, $lastName, $email, $phone, $city, $country, $rest, $userId){
-            $this->id = htmlspecialchars($id);
+        function __construct($firstName, $lastName, $email, $phone, $city, $country, $rest, $userId){
             $this->firstName = htmlspecialchars($firstName);
             $this->lastName = htmlspecialchars($lastName);
             $this->email = htmlspecialchars($email);
@@ -20,10 +18,6 @@
             $this->country = htmlspecialchars($country);
             $this->rest = htmlspecialchars($rest);
             $this->userId = htmlspecialchars($userId);
-        }
-
-        function getId(){
-            return $this->id;
         }
         
         function getFirstName(){

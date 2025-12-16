@@ -7,7 +7,6 @@
     include "contacts.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
         $contact = new contact(
             $_POST["nom"],
             $_POST["prenom"],

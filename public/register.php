@@ -10,14 +10,14 @@
         <section class="d-flex justify-content-center align-items-center py-4">
             <div class="card shadow w-50 p-5">
                 <h1 class="text-center">Créer un Compte</h1>
-                <form id="connectionForm" class="d-flex flex-column gap-3" action="../functions/createAccount.php" method="POST" enctype="multipart/form-data">
+                <form id="connectionForm" class="d-flex flex-column gap-3" action="../functions/registerUser.php" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label class="form-label small text-secondary">Profile Picture</label>
                         <div class="d-flex">
                             <div class="text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-image-fill"></i>
                             </div>
-                            <input type="file" class="form-control" name="photo">
+                            <input type="file" accept="image/png, image/jpeg" class="form-control" name="photo">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -26,7 +26,7 @@
                             <div class="text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-envelope-fill"></i>
                             </div>
-                            <input type="text" class="form-control" name="email" placeholder="Entrez votre adresse e-mail">
+                            <input required type="text" class="form-control" name="email" placeholder="Entrez votre adresse e-mail">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -35,7 +35,7 @@
                             <div class="text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <input type="text" class="form-control" name="firstName" placeholder="Entrez votre nom d'utilisateur">
+                            <input required type="text" class="form-control" name="firstName" placeholder="Entrez votre nom d'utilisateur">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -44,7 +44,7 @@
                             <div class="text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <input type="text" class="form-control" name="lastName" placeholder="Entrez votre nom d'utilisateur">
+                            <input required type="text" class="form-control" name="lastName" placeholder="Entrez votre nom d'utilisateur">
                         </div>
                     </div>
                     <div class="mb-2">
@@ -53,7 +53,7 @@
                             <div class="text-dark p-2 rounded-start border password">
                                 <i class="bi bi-lock-fill"></i>
                             </div>
-                            <input type="password" name="password" class="form-control" placeholder="Entrez votre mot de passe">
+                            <input required type="password" name="password" class="form-control" placeholder="Entrez votre mot de passe">
                         </div>
                     </div>
                     <div class="mb-2">
@@ -63,7 +63,7 @@
                                 <div class="text-dark p-2 rounded-start border confirm-password">
                                     <i class="bi bi-lock-fill"></i>
                                 </div>
-                                <input type="password" name="confirmPassword" class="form-control" placeholder="Entrez votre mot de passe">
+                                <input required type="password" name="confirmPassword" class="form-control" placeholder="Entrez votre mot de passe">
                             </div>
                             <div class="password-check-container"></div>
                         </div>

@@ -8,7 +8,7 @@ CREATE TABLE users (
     password VARCHAR(25),
     profilePicture	varchar(255),
     dateInscription TIMESTAMP
-)
+);
 
 CREATE TABLE contacts (
  	id INT PRIMARY KEY AUTO_INCREMENT,

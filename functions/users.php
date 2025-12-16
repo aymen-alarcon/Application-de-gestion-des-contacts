@@ -4,12 +4,14 @@
         public $lastName;
         public $email;
         public $password;
+        public $profilePicture;
 
-        function __construct($firstName, $lastName, $email, $password){
+        function __construct($firstName, $lastName, $email, $password, $profilePicture){
             $this->firstName = $firstName;
             $this->lastName = $lastName;
             $this->email = $email;
             $this->password = $password;
+            $this->profilePicture = $profilePicture;
         }
 
         function getFirstName(){
@@ -26,6 +28,10 @@
 
         function getPassword(){
             return $this->password;
+        }
+
+        function getProfilePicture(){
+            return $this->profilePicture;
         }
     }
 ?>

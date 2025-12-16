@@ -17,7 +17,7 @@
                             <div class="text-dark p-2 rounded-start border name-email">
                                 <i class="bi bi-image-fill"></i>
                             </div>
-                            <input type="file" class="form-control" name="photo">
+                            <input type="file" accept="image/png, image/jpeg" class="form-control" name="photo">
                         </div>
                     </div>
                     <div class="mb-3">

@@ -10,15 +10,17 @@
             $_POST["lastName"],
             $_POST["email"],
             $_POST["password"],
-        );
+            $profilePicture = "../uploads/" . $_FILES["photo"]["name"]
+   );
 
+        move_uploaded_file($_FILES["photo"]["tmp_name"], "../uploads/" . $_FILES["photo"]["name"]);
         $userRepo = new insertUser($conn);
         $userId = $userRepo->sqlQuery($user);
 
         $_SESSION["id"] = $userId;
         $_SESSION['session_start_time'] = time();
 
-        header("Location: ../public/profile.php?id=" . $userId);
+        header("Location: ../public/profile.php");
         exit;
     }    
 ?>

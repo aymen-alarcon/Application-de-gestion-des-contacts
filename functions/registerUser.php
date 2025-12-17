@@ -5,9 +5,12 @@
     include "insertUser.php";
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["email"]) || empty($_POST["firstName"]) || empty($_POST["lastName"]) || empty($_POST["password"]) || empty($_POST["confirmPassword"]) || $_POST["confirmPassword"] !== $_POST["password"]) {      
-            $error = "you can't leave an empty input";  
+        if (empty($_POST["email"]) || empty($_POST["firstName"]) || empty($_POST["lastName"]) || empty($_POST["password"]) || empty($_POST["confirmPassword"])) {      
+            $error = "'you can't leave an empty input'";  
             header("Location: ../public/register.php?errorMessage= " . urlencode($error)); 
+        }elseif ($_POST["confirmPassword"] !== $_POST["password"]) {
+            $error = "'Your passwords doesn&#39;t match'";  
+            header("Location: ../public/register.php?passwordErrorMessage= " . urlencode($error)); 
         }else{
             $user = new user(
                 $_POST["firstName"],

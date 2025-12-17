@@ -41,3 +41,7 @@ input{
 .rounded-circle{
     height: -webkit-fill-available;
 }
+
+.border-danger.border-3::placeholder{
+    color: red;
+}

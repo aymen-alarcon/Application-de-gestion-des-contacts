@@ -41,3 +41,13 @@ input{
 .rounded-circle{
     height: -webkit-fill-available;
 }
+
+.border-danger.border-3::placeholder{
+    color: red;
+}
+
+@media screen and (max-width: 420px) {
+  .card.shadow.w-50.p-5 {
+    width: 100% !important;
+  }
+}

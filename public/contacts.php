@@ -1,15 +1,11 @@
 <?php
     $title = "Page de contact";
     include '../includes/header.php';
+    include '../functions/selectContacts.php';
 
     if (isset($_GET["errorMessage"])) {
         echo "<script>alert('" . $_GET["errorMessage"] . "')</script>";
     }
-
-    $sql = "SELECT * FROM contacts WHERE userId = ?";
-    $stmt = $conn -> prepare($sql);
-    $stmt -> execute([$_SESSION["id"]]);
-    $userContacts = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 ?>
     <div class="modal fade" id="modifyContact" tabindex="-1" role="dialog" aria-labelledby="modifyContactLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

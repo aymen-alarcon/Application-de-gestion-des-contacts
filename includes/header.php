@@ -1,13 +1,7 @@
 <?php 
     session_start();
-    include "../config/db.php";
-
-    if (isset($_SESSION["id"])) {
-        $sql = "SELECT * FROM users WHERE id = ?";
-        $stmt = $conn -> prepare($sql);
-        $stmt -> execute([$_SESSION['id']]);
-        $userInfo = $stmt -> fetch(PDO::FETCH_ASSOC);
-    }
+    include "../config/config.php";
+    include "../functions/selectUsers.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

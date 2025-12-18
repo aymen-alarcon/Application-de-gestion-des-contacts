@@ -1,26 +1,29 @@
 <?php
-    include '../config/db.php';
+    require "../config/db.php";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["email"]) || empty($_POST["password"])) {      
-            $error = "you can't leave an empty input";  
-            header("Location: ../public/register.php?errorMessage= " . urlencode($error)); 
-        }else{
-            $email = htmlspecialchars($_POST["email"]);
-            $password = htmlspecialchars($_POST["password"]);
-        }
-
-        $sql = "SELECT * FROM users WHERE email = ?";
-        $stmt = $conn -> prepare($sql);
-        $stmt -> execute([$email]);
-        $userLoginCredentials = $stmt -> fetch();
-        
-        if (password_verify($password, $userLoginCredentials['password'])) {
-            session_start();
-            $_SESSION["id"] = $userLoginCredentials["id"];
-            header("Location: ../public/profile.php?id=" . urlencode($_SESSION["id"]));
-        }else{            
-            header("Location: ../public/index.php?credentials_are_incorrect");
-        }
+    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+        header("Location: index.php");
+        exit;
     }
-?>
+
+    if (empty($_POST["password"]) || empty($_POST["email"])) {
+        header("Location: index.php");
+        exit;
+    }
+
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $sql = "SELECT * FROM users WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$email]);
+    $userCredentials = $stmt->fetch();
+    var_dump($userCredentials);
+
+    if (password_verify($password, $userCredentials["password"])) {
+        session_start();
+        $_SESSION["id"] = $userCredentials["id"];
+        header("Location: ../public/profile.php?id=" . urlencode($userCredentials["id"]));
+    }else{
+        header("Location: ../public/index.php");
+    }

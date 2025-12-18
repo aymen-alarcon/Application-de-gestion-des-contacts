@@ -27,7 +27,6 @@
         $contactReq->contactSqlQuery($contact);
 
     } else { 
-        $contact->setId($_POST["contact_id"]);
         $updateReq = new updateContact($conn);
         $updateReq->updateContactSqlQuery($contact);
     }

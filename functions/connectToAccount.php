@@ -15,10 +15,12 @@
         $stmt -> execute([$email]);
         $userLoginCredentials = $stmt -> fetch();
         
-        if ($userLoginCredentials !== false) {
+        if (password_verify($password, $userLoginCredentials['password'])) {
             session_start();
             $_SESSION["id"] = $userLoginCredentials["id"];
             header("Location: ../public/profile.php?id=" . urlencode($_SESSION["id"]));
+        }else{            
+            header("Location: ../public/index.php?credentials_are_incorrect");
         }
     }
 ?>

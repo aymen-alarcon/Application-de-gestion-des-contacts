@@ -23,6 +23,7 @@
     if (password_verify($password, $userCredentials["password"])) {
         session_start();
         $_SESSION["id"] = $userCredentials["id"];
+        setcookie("id", $userCredentials["id"]);    
         header("Location: ../public/profile.php?id=" . urlencode($userCredentials["id"]));
     }else{
         header("Location: ../public/index.php");

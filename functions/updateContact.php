@@ -17,7 +17,6 @@
                 $contact->getCity(),
                 $contact->getCountry(),
                 $contact->getRest(),
-                $contact->getId(),
             ]);
         }
     }

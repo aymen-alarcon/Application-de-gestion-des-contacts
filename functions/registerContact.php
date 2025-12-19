@@ -6,7 +6,7 @@
     include "updateContact.php";
     include "contacts.php";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
         header("Location: ../public/contacts.php?id=" . $_SESSION["id"]);
         exit;
     }
@@ -30,4 +30,5 @@
         $updateReq = new updateContact($conn);
         $updateReq->updateContactSqlQuery($contact);
     }
+    header("Location: ../public/contacts.php?id=" . urlencode($_SESSION["id"]));
 ?>

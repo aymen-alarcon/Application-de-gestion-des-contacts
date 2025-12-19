@@ -4,7 +4,7 @@
     include "users.php";
     include "insertUser.php";
     
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
         $error = "'you can't leave an empty input'";  
         header("Location: ../public/register.php?errorMessage= " . urlencode($error)); 
         exit;
@@ -21,7 +21,7 @@
             $_POST["firstName"],
             $_POST["lastName"],
             $_POST["email"],
-            $_POST["password"],
+            password_hash($_POST["password"], PASSWORD_DEFAULT),
             $profilePicture = "../uploads/" . $_FILES["photo"]["name"]
         );
 

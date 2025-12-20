@@ -18,5 +18,17 @@
         $sql = "INSERT INTO contacts ($columns) VALUES ($values)";
         $stmt = $conn->prepare($sql);
         $stmt->execute($data);
-        }
+    }
+
+    function updateContactSqlQuery($data, $conn){
+        $contactId = $data['id'];
+        unset($data["id"]);
+        $columns = implode(", ", array_map(fn($key) => "$key = ?",array_keys($data)));
+        $sql = "UPDATE contacts SET $columns WHERE id = " . $contactId . " AND userId = ". $_SESSION["id"] . "";
+        var_dump($sql);
+        var_dump($data);
+        $stmt = $conn->prepare($sql);
+        var_dump($stmt);
+        $stmt->execute(array_values($data));  
+    }
 ?>

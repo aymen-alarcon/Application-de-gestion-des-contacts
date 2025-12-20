@@ -3,10 +3,35 @@ let form = document.forms["connectionForm"]
 let password = document.querySelector(".password")
 let confirmPassword = document.querySelector(".confirm-password")
 let contactForm = document.forms["contactForm"]
-let editContactForm = document.forms["editContactForm"]
 let searchBar = document.getElementById("search")
 
 if (window.location.pathname.includes("contacts.php")) {
+    let clickCount = 0
+    document.querySelector('.editContactBtn').addEventListener("click", function () {
+        clickCount++
+        if (clickCount % 2 == 0) {            
+            contactForm.submit.value = "createContact";
+            contactForm.id.value = "";
+            contactForm.nom.value = "";
+            contactForm.prenom.value = "";
+            contactForm.phone.value = "";
+            contactForm.email.value = "";
+            contactForm.address.value = "";
+        } else {
+            contactForm.submit.value = "updateContact";
+            contactForm.id.value = this.dataset.id;
+            contactForm.nom.value = this.dataset.fname;
+            contactForm.prenom.value = this.dataset.lname;
+            contactForm.phone.value = this.dataset.phone;
+            contactForm.email.value = this.dataset.email;
+            contactForm.address.value = this.dataset.address;
+        }
+    });
+
+    document.querySelector('.deleteContactBtn').addEventListener("click", ()=>{
+        contactForm.submit.value = "updateContact";
+    })
+
     searchBar.addEventListener("change", ()=>{
         document.querySelectorAll(".nameOfContact").forEach(nameOfContact =>{
             let parentElement = nameOfContact.parentElement
@@ -29,19 +54,6 @@ if (window.location.pathname.includes("contacts.php")) {
             document.getElementById("idContact").value = this.dataset.id;
         })
     })
-
-    document.querySelectorAll(".editContactBtn").forEach(editBtn => {
-        editBtn.addEventListener("click", function() {
-            editContactForm.id.value = this.dataset.id;
-            editContactForm.nom.value = this.dataset.fname;
-            editContactForm.prenom.value = this.dataset.lname;
-            editContactForm.phone.value = this.dataset.phone;
-            editContactForm.email.value = this.dataset.email;
-            editContactForm.ville.value = this.dataset.city;
-            editContactForm.paye.value = this.dataset.country;
-            editContactForm.restofaddress.value = this.dataset.rest;
-        });
-    });
 }
 
 if (window.location.pathname.includes("register.php") || window.location.pathname.includes("login.php")) {

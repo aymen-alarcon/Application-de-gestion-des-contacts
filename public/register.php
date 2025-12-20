@@ -10,7 +10,7 @@
         <section class="d-flex justify-content-center align-items-center py-4">
             <div class="card shadow w-50 p-5">
                 <h1 class="text-center">Créer un Compte</h1>
-                <form id="connectionForm" class="d-flex flex-column gap-3" action="../functions/createAccount.php" method="POST" enctype="multipart/form-data">
+                <form id="connectionForm" class="d-flex flex-column gap-3" action="../functions/performActions.php" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label class="form-label small text-secondary">Profile Picture</label>
                         <div class="d-flex">
@@ -68,7 +68,7 @@
                             <div class="password-check-container"></div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary text-white w-100">Créer un compte</button>
+                    <button type="submit" name="submit" value="createAccount" class="btn btn-primary text-white w-100">Créer un compte</button>
                 </form>
                 <div class="text-center mt-4">
                     <p class="text-secondary small">

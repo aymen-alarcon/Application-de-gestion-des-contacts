@@ -13,7 +13,7 @@
                     "firstName" => htmlspecialchars($_POST["firstName"]),
                     "lastName" => htmlspecialchars($_POST["lastName"]),
                     "email" => htmlspecialchars($_POST["email"]),
-                    "password" => htmlspecialchars($_POST["password"]),
+                    "password" => htmlspecialchars(password_hash($_POST["password"], PASSWORD_DEFAULT)),
                     "profilePicture" => "../uploads/" . $_FILES["photo"]["name"],
                 ];
 
@@ -38,6 +38,19 @@
                 ];
                 contactSqlQuery($data, $conn);
                 header("Location: ../public/contacts.php?id=" . urlencode($userId));
+                exit;    
+            break;
+        case 'updateContact':
+                $data = [
+                    "id" => htmlspecialchars($_POST["id"]),
+                    "firstName" => htmlspecialchars($_POST["nom"]),
+                    "lastName" => htmlspecialchars($_POST["prenom"]),
+                    "email" => htmlspecialchars($_POST["email"]),
+                    "phone" => htmlspecialchars($_POST["phone"]),
+                    "address" => htmlspecialchars($_POST["address"]),
+                ];
+                updateContactSqlQuery($data, $conn);
+                header("Location: ../public/contacts.php");
                 exit;    
             break;
     }

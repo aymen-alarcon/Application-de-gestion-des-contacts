@@ -15,7 +15,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" id="editContactForm" action="../functions/modifyContact.php">
+                    <form method="POST" id="editContactForm" action="../functions/updateContact.php">
                         <input type="hidden" name="id" id="contactId">
                         <div class="mb-3">
                             <label for="name" class="form-label">Nom</label>
@@ -155,7 +155,7 @@
                         <h3>Ajouter un contact</h3>
                     </div>
                     <div class="card-body">
-                        <form method="POST" id="contactForm" action="../functions/registerContact.php">
+                        <form method="POST" id="contactForm" action="../functions/controllerContact.php">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nom</label>
                                 <input required type="text" class="form-control" id="name" name="nom" placeholder="Aymen" minlength="2">
